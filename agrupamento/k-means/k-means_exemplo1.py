@@ -18,7 +18,9 @@ kmeans.fit(base)
 
 centroides = kmeans.cluster_centers_
 rotulos = kmeans.labels_
+base_final = pd.concat([pd.DataFrame(base), pd.DataFrame(rotulos)], axis = 1)
 
+# Ao Commitar as cores irão ficar em pontos 0,0,0 - Rodar somente as linhas abaixo novamente.
 cores = ["g.", "r.", "b."]
 for i in range(len(x)):
     plt.plot(base[i][0], base[i][1], cores[rotulos[i]], markersize = 15)
